@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "author": "Tati Bezerra",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "board-pi-pico-w",
+        "id": "pico",
+        "top": -12.85,
+        "left": -111.65,
+        "attrs": { "builder": "pico-sdk" }
+      },
+      { "type": "wokwi-servo", "id": "servo1", "top": 26.8, "left": 76.8, "attrs": {} }
+    ],
+    "connections": [
+      [ "pico:GP0", "$serialMonitor:RX", "", [] ],
+      [ "pico:GP1", "$serialMonitor:TX", "", [] ],
+      [ "servo1:PWM", "pico:GP22", "green", [ "h-86.4", "v9.8" ] ],
+      [ "pico:3V3", "servo1:V+", "green", [ "h67.51", "v48" ] ],
+      [ "pico:GND.8", "servo1:GND", "black", [ "h105.91", "v57.6", "h-9.6" ] ]
+    ],
+    "dependencies": {}
+  }
